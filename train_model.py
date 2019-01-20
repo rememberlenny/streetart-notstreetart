@@ -16,8 +16,8 @@ import os
 DATASET = 'streetart'
 NUM_EPOCHS = 30
 BS = 32
-IMAGE_NAME = 'plot.png'
-MODEL_NAME = 'save_model.model'
+IMAGE_NAME = 'streetart_plot.png'
+MODEL_NAME = 'streetart_model.model'
 
 # derive the path to the directories containing the training,
 # validation, and testing splits, respectively
@@ -104,7 +104,7 @@ print(classification_report(testGen.classes, predIdxs,
 
 # save the network to disk
 print("[INFO] serializing network to '{}'...".format(MODEL_NAME))
-model.save(save_model.model)
+model.save(MODEL_NAME)
 
 # plot the training loss and accuracy
 N = NUM_EPOCHS
