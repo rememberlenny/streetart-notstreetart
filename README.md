@@ -23,7 +23,7 @@ Version two of the model and dataset, resulted in the following results:
 |5  |	val_acc |	0.7505330491040562 |	0.7036247338567462 	| 0.7974413653680765 |
 |6 |	val_loss |	0.6231901207204058 |	0.5713440334873159 	| 0.7559062163035075 |
 
-![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/old/streetart_training_plot_v1.png?raw=true)
+![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_plot.png?raw=true)
 
 The latest training results can be seen on Comet.ml here: https://www.comet.ml/lenny/street-art-detection/63f69003931a438abb477ae5c5bc4ca5
 
