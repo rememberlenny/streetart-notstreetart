@@ -12,7 +12,16 @@ The project above trains a model that detects whether an image is or is not stre
 
 ## Training results
 
-Version one of the model and dataset, which was uncleaned, resulted in the following results:
+Version two of the model and dataset, resulted in the following results:
+
+|	Name	| Value |	Min | Value |	Max | 
+|-------|-------|-----|-------|-----|
+|1 |	acc |	0.804197365509982 |	0.375 | 0.9375 |
+|2 |	batch |	130	| 0 |	130 |
+|3  |	loss | 0.5488157922014857 |	0.36985594034194946 	| 1.2533280849456787 |
+|4 |	size | 32	| 31 |	32 |
+|5  |	val_acc |	0.7505330491040562 |	0.7036247338567462 	| 0.7974413653680765 |
+|6 |	val_loss |	0.6231901207204058 |	0.5713440334873159 	| 0.7559062163035075 |
 
 ![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_training_plot_v1.png?raw=true)
 
@@ -62,8 +71,8 @@ The correct directory structure should look like this:
 
 ## How to run
 
-1: `pip install -r requirements.txt`
-2: Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
+1. `pip install -r requirements.txt`
+2. Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
 3. Run `python build_dataset.py`. This will create the `/testing`, `/training`, and `/validation` dataset.
 4. Run `python save_model.py` or use the python notebook and run the training step.
 5. Use `python load_model.py` to validate the results.
