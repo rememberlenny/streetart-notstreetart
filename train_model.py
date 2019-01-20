@@ -1,3 +1,10 @@
+# import comet_ml in the top of your file
+from comet_ml import Experiment
+
+# Add the following code anywhere in your machine learning file
+experiment = Experiment(api_key="BP17wP514mMSpFq1BkPJ8HQGY",
+                        project_name="street-art-detection", workspace="lenny")
+
 import matplotlib
 matplotlib.use("Agg")
 
@@ -15,7 +22,7 @@ import os
 # initialize the number of training epochs and batch size
 DATASET = 'streetart'
 NUM_EPOCHS = 30
-BS = 32
+BS = 100
 IMAGE_NAME = 'streetart_plot.png'
 MODEL_NAME = 'streetart_model.model'
 
@@ -118,4 +125,4 @@ plt.title("Training Loss and Accuracy on Dataset")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="lower left")
-plt.savefig(IMAGE_NAM)
+plt.savefig(IMAGE_NAME)
