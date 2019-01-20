@@ -41,13 +41,13 @@ The correct directory structure should look like this:
 │   ├── images
 │   │   ├── not_streetart [4322 entries exceeds filelimit, not opening dir]
 │   │   └── streetart [1944 entries exceeds filelimit, not opening dir]
-│   ├── testing
+│   ├── testing [generated from build_dataset.py]
 │   │   ├── not_streetart [858 entries exceeds filelimit, not opening dir]
 │   │   └── streetart [396 entries exceeds filelimit, not opening dir]
-│   ├── training
+│   ├── training [generated from build_dataset.py]
 │   │   ├── not_streetart [3124 entries exceeds filelimit, not opening dir]
 │   │   └── streetart [1387 entries exceeds filelimit, not opening dir]
-│   └── validation
+│   └── validation [generated from build_dataset.py]
 │       ├── not_streetart [340 entries exceeds filelimit, not opening dir]
 │       └── streetart [161 entries exceeds filelimit, not opening dir]
 ├── build_dataset.py
@@ -60,3 +60,10 @@ The correct directory structure should look like this:
 └── streetart_training_plot_v1.png
 ```
 
+## How to run
+
+1: `pip install -r requirements.txt`
+2: Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
+3. Run `python build_dataset.py`. This will create the `/testing`, `/training`, and `/validation` dataset.
+4. Run `python save_model.py` or use the python notebook and run the training step.
+5. Use `python load_model.py` to validate the results.
