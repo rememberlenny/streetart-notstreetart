@@ -1,0 +1,5 @@
+streetart/images/*
+streetart/validation/*
+streetart/testing/*
+streetart/training/*
+.ipynb_checkpoints
