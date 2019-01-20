@@ -8,7 +8,7 @@ Train a model that detects if image is or is not street art, based on images gat
 
 The project above trains a model that detects whether an image is or is not street art. The model is trained on a image set gathered from hashtagged images for #streetart. The training data was compared against images from New York City. The image dataset was cleaned manually to have any mistagged content and NSFW images removed.
 
-![Image montage](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_montage_v1.png?raw=true)
+![Image montage](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_montage_v2.png?raw=true)
 
 ## Training results
 
@@ -23,7 +23,7 @@ Version two of the model and dataset, resulted in the following results:
 |5  |	val_acc |	0.7505330491040562 |	0.7036247338567462 	| 0.7974413653680765 |
 |6 |	val_loss |	0.6231901207204058 |	0.5713440334873159 	| 0.7559062163035075 |
 
-![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_training_plot_v1.png?raw=true)
+![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/old/streetart_training_plot_v1.png?raw=true)
 
 The latest training results can be seen on Comet.ml here: https://www.comet.ml/lenny/street-art-detection/63f69003931a438abb477ae5c5bc4ca5
 
@@ -75,4 +75,4 @@ The correct directory structure should look like this:
 2. Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
 3. Run `python build_dataset.py`. This will create the `/testing`, `/training`, and `/validation` dataset.
 4. Run `python train_model.py` or use the python notebook and run the training step.
-5. Use `python load_model.py` to validate the results.
+5. Use `python test_model_by_generating_montage.py` to validate the results.
