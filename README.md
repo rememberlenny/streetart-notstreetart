@@ -25,7 +25,7 @@ Version two of the model and dataset, resulted in the following results:
 
 ![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_training_plot_v1.png?raw=true)
 
-The latest training results can be seen on Comet.ml here: https://www.comet.ml/lenny/street-art-detection/dcec5a30912543839cc27ed30083cee2
+The latest training results can be seen on Comet.ml here: https://www.comet.ml/lenny/street-art-detection/63f69003931a438abb477ae5c5bc4ca5
 
 ![screen shot 2019-01-19 at 11 59 36 pm](https://user-images.githubusercontent.com/1332366/51435496-502e2280-1c46-11e9-8f46-fa43763a1f33.png)
 
@@ -62,11 +62,11 @@ The correct directory structure should look like this:
 ├── build_dataset.py
 ├── load_model.py
 ├── README.md
-├── save_model.py
 ├── Street Art Detector.ipynb
 ├── streetart_model_v1.model
 ├── streetart_montage_v1.png
-└── streetart_training_plot_v1.png
+├── streetart_training_plot_v1.png
+└── train_model.py
 ```
 
 ## How to run
@@ -74,5 +74,5 @@ The correct directory structure should look like this:
 1. `pip install -r requirements.txt`
 2. Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
 3. Run `python build_dataset.py`. This will create the `/testing`, `/training`, and `/validation` dataset.
-4. Run `python save_model.py` or use the python notebook and run the training step.
+4. Run `python train_model.py` or use the python notebook and run the training step.
 5. Use `python load_model.py` to validate the results.
