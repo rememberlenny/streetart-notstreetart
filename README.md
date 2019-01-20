@@ -8,7 +8,7 @@ Train a model that detects if image is or is not street art, based on images gat
 
 The project above trains a model that detects whether an image is or is not street art. The model is trained on a image set gathered from hashtagged images for #streetart. The training data was compared against images from New York City. The image dataset was cleaned manually to have any mistagged content and NSFW images removed.
 
-![Image montage](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_montage_v2.png?raw=true)
+![Image montage](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_montage.png?raw=true)
 
 ## Training results
 
@@ -50,22 +50,24 @@ The correct directory structure should look like this:
 │   ├── images
 │   │   ├── not_streetart [4322 entries exceeds filelimit, not opening dir]
 │   │   └── streetart [1944 entries exceeds filelimit, not opening dir]
-│   ├── testing [generated from build_dataset.py]
+│   ├── testing
 │   │   ├── not_streetart [858 entries exceeds filelimit, not opening dir]
 │   │   └── streetart [396 entries exceeds filelimit, not opening dir]
-│   ├── training [generated from build_dataset.py]
+│   ├── training
 │   │   ├── not_streetart [3124 entries exceeds filelimit, not opening dir]
 │   │   └── streetart [1387 entries exceeds filelimit, not opening dir]
-│   └── validation [generated from build_dataset.py]
+│   └── validation
 │       ├── not_streetart [340 entries exceeds filelimit, not opening dir]
 │       └── streetart [161 entries exceeds filelimit, not opening dir]
 ├── build_dataset.py
-├── load_model.py
+├── not_streetart.png
 ├── README.md
+├── requirements.txt
 ├── Street Art Detector.ipynb
-├── streetart_model_v1.model
-├── streetart_montage_v1.png
-├── streetart_training_plot_v1.png
+├── streetart_model.model
+├── streetart_montage.png
+├── streetart_plot.png
+├── test_model_by_generating_montage.py
 └── train_model.py
 ```
 
