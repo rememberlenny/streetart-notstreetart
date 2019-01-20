@@ -1,10 +1,3 @@
-# import comet_ml in the top of your file
-from comet_ml import Experiment
-    
-# Add the following code anywhere in your machine learning file
-experiment = Experiment(api_key="BP17wP514mMSpFq1BkPJ8HQGY",
-                        project_name="street-art-detection", workspace="lenny")
-
 import matplotlib
 matplotlib.use("Agg")
 
