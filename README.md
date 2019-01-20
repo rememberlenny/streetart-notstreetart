@@ -62,12 +62,8 @@ The correct directory structure should look like this:
 
 ## How to run
 
-1: `pip install -r requirements.txt`
-
-2: Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
-
+1. `pip install -r requirements.txt`
+2. Download dataset from Floydhub into `/dataset`. Folder structure for `/dataset/images` should match the format listed above.
 3. Run `python build_dataset.py`. This will create the `/testing`, `/training`, and `/validation` dataset.
-
 4. Run `python save_model.py` or use the python notebook and run the training step.
-
 5. Use `python load_model.py` to validate the results.
