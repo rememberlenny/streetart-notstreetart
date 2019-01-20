@@ -6,32 +6,30 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 from imutils import build_montages
 from imutils import paths
+from matplotlib import pyplot as plt
 import numpy as np
 import argparse
 import random
 import cv2
 
-# construct the argument parser and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--images", required=True,
-	help="path to out input directory of images")
-ap.add_argument("-m", "--model", required=True,
-	help="path to pre-trained model")
-args = vars(ap.parse_args())
+MODEL_NAME = 'streetart_model.model'
+MONTAGE_FILENAME = 'streetart_montage.png'
+IMAGES_PATH = 'streetart/testing'
 
 # load the pre-trained network
 print("[INFO] loading pre-trained network...")
-model = load_model(args["model"])
+model = load_model(MODEL_NAME)
 
 # grab all image paths in the input directory and randomly sample them
-imagePaths = list(paths.list_images(args["images"]))
+imagePaths = list(paths.list_images(IMAGES_PATH))
 random.shuffle(imagePaths)
-imagePaths = imagePaths[:16]
+imagePaths = imagePaths[:25]
 
 # initialize our list of results
 results = []
 
 # loop over our sampled image paths
+print("[INFO] evaluating model against test set...")
 for p in imagePaths:
 	# load our original input image
 	orig = cv2.imread(p)
@@ -56,8 +54,8 @@ for p in imagePaths:
 
 	# an index of zero is the 'parasitized' label while an index of
 	# one is the 'uninfected' label
-	label = "Parasitized" if pred == 0 else "Uninfected"
-	color = (0, 0, 255) if pred == 0 else (0, 255, 0)
+	label = "Not street art" if pred == 0 else "Street art found"
+	color = (255, 0, 0) if pred == 0 else (0, 255, 0)
 
 	# resize our original input (so we can better visualize it) and
 	# then draw the label on the image
@@ -68,9 +66,11 @@ for p in imagePaths:
 	# add the output image to our list of results
 	results.append(orig)
 
+print("[INFO] building image montage of results...")
 # create a montage using 128x128 "tiles" with 4 rows and 4 columns
-montage = build_montages(results, (128, 128), (4, 4))[0]
+montage = build_montages(results, (200, 200), (5, 5))[0]
+cv2.imwrite(MONTAGE_FILENAME, montage)
 
-# show the output montage
-cv2.imshow("Results", montage)
-cv2.waitKey(0)
+img = cv2.imread(MONTAGE_FILENAME)
+img2 = img[:,:,::-1]
+plt.imshow(img)
