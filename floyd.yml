@@ -1,4 +1,4 @@
-env: tensorflow-1.7
+env: tensorflow-1.12
 machine: gpu
 input:
   - source: rememberlenny/datasets/streetart-notstreetart/2
