@@ -1,7 +1,5 @@
-env: tensorflow-1.12
+env: tensorflow-1.7
 machine: gpu
 input:
   - source: rememberlenny/datasets/streetart-notstreetart/2
     destination: streetart
-description: Street art, not street art
-command: python train_model.py
