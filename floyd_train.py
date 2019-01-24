@@ -1,10 +1,3 @@
-# import comet_ml in the top of your file
-from comet_ml import Experiment
-
-# Add the following code anywhere in your machine learning file
-experiment = Experiment(api_key="BP17wP514mMSpFq1BkPJ8HQGY",
-                        project_name="street-art-detection", workspace="lenny")
-
 import matplotlib
 matplotlib.use("Agg")
 
@@ -16,15 +9,16 @@ from sklearn.metrics import classification_report
 from imutils import paths
 import matplotlib.pyplot as plt
 import numpy as np
-import argparse
 import os
 
+PATH = '/floyd/input/dataset'
+
 # initialize the number of training epochs and batch size
-DATASET = 'streetart'
-NUM_EPOCHS = 50
+DATASET = '/floyd/input/dataset'
+NUM_EPOCHS = 100
 BS = 24
-IMAGE_NAME = 'streetart_plot.png'
-MODEL_NAME = 'new_streetart.model'
+IMAGE_NAME = 'plot.png'
+MODEL_NAME = 'streetart.model'
 
 # derive the path to the directories containing the training,
 # validation, and testing splits, respectively
@@ -113,16 +107,3 @@ print(classification_report(testGen.classes, predIdxs,
 print("[INFO] serializing network to '{}'...".format(MODEL_NAME))
 model.save(MODEL_NAME)
 
-# plot the training loss and accuracy
-N = NUM_EPOCHS
-plt.style.use("ggplot")
-plt.figure()
-plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
-plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
-plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
-plt.title("Training Loss and Accuracy on Dataset")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss/Accuracy")
-plt.legend(loc="lower left")
-plt.savefig(IMAGE_NAME)
