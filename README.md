@@ -27,9 +27,9 @@ Version two of the model and dataset, resulted in the following results:
 
 ![Training results](https://github.com/rememberlenny/streetart-notstreetart/blob/master/streetart_plot.png?raw=true)
 
-The latest training results can be seen on Comet.ml here: https://www.comet.ml/lenny/street-art-detection/63f69003931a438abb477ae5c5bc4ca5
+The latest training results can be seen on FloydHub here: https://www.floydhub.com/rememberlenny/projects/streetart-notstreetart/3
 
-![screen shot 2019-01-19 at 11 59 36 pm](https://user-images.githubusercontent.com/1332366/51435496-502e2280-1c46-11e9-8f46-fa43763a1f33.png)
+[![](https://user-images.githubusercontent.com/1332366/51935758-9f0d5200-23d4-11e9-935a-9d88996934be.png)](https://www.floydhub.com/rememberlenny/projects/streetart-notstreetart/3)
 
 ## Dataset
 
