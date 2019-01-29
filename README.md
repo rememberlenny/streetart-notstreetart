@@ -4,6 +4,8 @@
 
 Train a model that detects if image is or is not street art, based on images gathered from hashtagged content.
 
+[![](https://user-images.githubusercontent.com/1332366/51935448-eba45d80-23d3-11e9-9f5c-5773f15a9273.png)](https://www.floydhub.com/run?template=https://github.com/rememberlenny/streetart-notstreetart)
+
 ## What
 
 The project above trains a model that detects whether an image is or is not street art. The model is trained on a image set gathered from hashtagged images for #streetart. The training data was compared against images from New York City. The image dataset was cleaned manually to have any mistagged content and NSFW images removed.
